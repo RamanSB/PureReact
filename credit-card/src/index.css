@@ -1,0 +1,72 @@
+.card {
+  position: relative;
+  background-color: #0066CC;
+  height: 300px;
+  width: 420px;
+  border-radius: 20px;
+  display: block;
+  margin-left: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.card_number {
+  position: absolute;
+  bottom: 110px;
+  align-items: center;
+  justify-content: center;
+  left: 48px;
+}
+
+.expiry {
+  position: absolute;
+  display: inline;
+  left: 164px;
+  bottom: 64px;
+}
+
+.span-bank-number-text, .span-bank-name-text, .span-card-holder-text,
+ .valid-thru, .expiry-date {
+  color: #fff;
+}
+
+.span-bank-number-text {
+  font-size: 32px;
+  font-weight: bold;
+  font-weight: 400;
+  font-family: monospace;
+}
+
+.span-bank-name-text {
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.span-card-holder-text {
+  font-family : monospace;
+  position : absolute;
+  text-transform: uppercase;
+  font-stretch: semi-condensed;
+  bottom: 20px;
+  font-size: 24px;
+  left: 40px;
+}
+
+.valid-thru {
+  display: inline-block;
+  width: 30px;
+  font-weight: lighter;
+  font-family: monospace;
+  margin-right: 16px;
+}
+
+.expiry-date {
+  font-size: 32px;
+  font-family: monospace;
+}

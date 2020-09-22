@@ -1,0 +1,43 @@
+.sender-address-label {
+  top: 16px;
+  left: 10px;
+  position: absolute;
+}
+
+.recipient-address-label {
+  top: 130px;
+  left: 250px;
+  position: absolute;
+  align-items: center;
+}
+
+.stamp {
+  top: 16px;
+  right: 10px;
+  margin-right: 24px;
+  position: absolute;
+  border-style: inset dashed;
+  border-width: thin;
+  height: 96px;
+  width: 64px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.person-text {
+  margin-left: 24px;
+  display: inline;
+}
+
+.envelope {
+  border: 1px solid #ccc;
+  height: 350px;
+  width: 700px;
+  position: relative;
+}
+
+.stamp-span-text {
+  transform: rotate(315deg);
+}
