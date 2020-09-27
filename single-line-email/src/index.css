@@ -1,0 +1,25 @@
+.action-item-pin {
+  margin-left: 8px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin-top: 20px;
+  color: black;
+}
+
+.subtitle-text{
+  color: lightgrey;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Times New Roman";
+}

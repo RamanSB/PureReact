@@ -4,3 +4,13 @@ node_modules/
 
 #poster
 poster/public/
+
+#address-label & address-label1
+address-label/public/
+address-label1/public/
+
+#credit-card
+credit-card/public/
+
+#single-line-email
+single-line-email/public/
