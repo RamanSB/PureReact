@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 import './index.css';
 
 
 function CreditCard({cardInfo}){
   let {name, expiry, card_no, bank_name} = cardInfo;
-  console.log(name);
   return (
     <div className="card">
       <span className="span-bank-name-text">{bank_name}</span>
@@ -45,6 +45,22 @@ let example_card_object = {
   bank_name: "React Bank, JS"
 }
 
+CreditCard.propTypes = {
+  cardInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    expiry: PropTypes.string.isRequired,
+    card_no: PropTypes.string.isRequired,
+    bank: PropTypes.string.isRequired
+  }).isRequired
+}
+
+ExpiryComponent.propTypes = {
+  expiry: PropTypes.string.isRequired
+}
+
+CardNumberComponent.propTypes = {
+  cardNumber: PropTypes.string.isRequired
+}
 
 
 ReactDOM.render(<CreditCard cardInfo={example_card_object}/>, document.querySelector('#root'));

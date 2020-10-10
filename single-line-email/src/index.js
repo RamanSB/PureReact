@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import './index.css';
+
 
 /**
 3 SubComponents:
@@ -72,6 +74,14 @@ let test_email = {
   date: "Jul 15",
   message: "Read this issue on the web http://reactjsnewsletter.com/issues/36?sid=3QGDYBX ### Comm"
 }
+
+EmailItem.propTypes = PropTypes.shape({
+  sender: PropTypes.string;
+  subject: PropTypes.string;
+  date: PropTypes.string;
+  message: PropTypes.string;
+  }
+).isRequired;
 
 
 ReactDOM.render(<EmailItem email={test_email}/>, document.querySelector('#root'));

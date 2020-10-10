@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import PropTypes from 'prop-types'
 import './index.css';
 
 /**
@@ -37,6 +37,12 @@ function Poster({image, title, text}){
     </div>
   )
 }
+
+Poster.propTypes = PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
+}).isRequired;
 
 
 ReactDOM.render(<Poster
