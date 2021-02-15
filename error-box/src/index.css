@@ -3,4 +3,9 @@
   height: 128px;
   border: 1px solid #ccc;
   background-color: #f7b3b3;
+  position: center;
+}
+
+.error-img {
+  vertical-align: middle;
 }
