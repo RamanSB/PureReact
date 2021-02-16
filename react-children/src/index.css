@@ -1,0 +1,17 @@
+p {
+  font-size: 20px;
+  color: green;
+  font-family: fantasy;
+}
+
+span {
+  color: blue;
+  font-size: 18px;
+  font-family: Arial;
+}
+
+#component-container {
+  height: 120px;
+  width: 60%;
+  border: 2px dashed black;
+}
