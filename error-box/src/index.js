@@ -19,7 +19,7 @@ ErrorBox.propTypes = {
   ])
 }
 
-let children = "The world is ending!";
+let text = "The world is ending!";
 
 
-ReactDOM.render(<ErrorBox children={children}/>, document.querySelector('#root'));
+ReactDOM.render(<ErrorBox>{text}</ErrorBox>, document.querySelector('#root'));
