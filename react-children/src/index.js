@@ -10,6 +10,8 @@ import './index.css';
   count
   only
   toArray
+  //splice mutates the object
+  //slice does not
 */
 
 function FirstChildOnly({children}){
@@ -58,13 +60,28 @@ function Head(props){
     );
 }
 
+function Tail(props){
+    let childrenArray = React.Children.toArray(props.children);
+    if(props.number > childrenArray.length){
+      return <p>There only exists {childrenArray.length} elements, not {props.number}</p>
+    }
+    console.log(`Hello: ${JSON.stringify(childrenArray)}`);
+    let result = childrenArray.slice(-props.number);
+    console.log(`Hello: ${JSON.stringify(result)}`);
+    return (
+      <div id="component-container">
+        {result}
+      </div>
+    );
+}
+
 ReactDOM.render(
-  <Head number={5}>
+  <Tail number={3}>
     <p>hey</p>
     <p>ma</p>
     <p>whats</p>
     <p>up</p>
     <p>you</p>
     <p>good</p>
-  </Head>
+  </Tail>
   ,document.querySelector('#root'));
