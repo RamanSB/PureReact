@@ -3,9 +3,18 @@
   height: 128px;
   border: 1px solid #ccc;
   background-color: #f7b3b3;
-  position: center;
+  border-radius: 8px;
+  line-height: 128px;
 }
 
-.error-img {
+#error-img {
   vertical-align: middle;
+  margin-left: 4px;
+  margin-right: 16px;
+}
+
+#span-text {
+  color: #ff6437;
+  font-family: verdana;
+  margin-left: 1em;
 }
