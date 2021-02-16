@@ -4,13 +4,13 @@ import warningLogoTest from './res/icons8-brake-warning-64.png';
 import './index.css';
 
 //Can put the image in the public directory so the server can access it OR import.
-function ErrorBox(){
+function ErrorBox({children}){
   return (
     <div className="error-box">
-      <span id="span-text"><img id="error-img" src={warningLogoTest}/>The world is ending!</span>
+      <span id="span-text"><img id="error-img" src={warningLogoTest}/>{children}</span>
     </div>
   );
 }
 
-
-ReactDOM.render(<ErrorBox/>, document.querySelector('#root'));
+let children = "The world is ending!";
+ReactDOM.render(<ErrorBox children={children}/>, document.querySelector('#root'));
