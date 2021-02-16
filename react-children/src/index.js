@@ -17,7 +17,7 @@ function FirstChildOnly({children}){
     let childrenArray = React.Children.toArray(children);
     console.log(`Logging: ${JSON.stringify(childrenArray)}`);
     let childToRender = null;
-    if(children.length > 0){
+    if(childrenArray.length > 0){
        childToRender = childrenArray[0];
     }
 
@@ -28,9 +28,43 @@ function FirstChildOnly({children}){
     );
 }
 
+function LastChildOnly({children}){
+    console.log(`Logging: ${JSON.stringify(children)}`);
+    let childrenArray = React.Children.toArray(children);
+    let childToRender = null;
+    if(childrenArray.length > 0){
+      childToRender = childrenArray[childrenArray.length - 1];
+    }
+    console.log(`Logging: last element: ${JSON.stringify(childToRender)}`);
+    return (
+      <div id="component-container">
+        {childToRender}
+      </div>
+    );
+}
+
+function Head(props){
+    console.log(`Number: ${JSON.stringify(props.number)}`);
+    console.log(`Children: ${JSON.stringify(props.children)}`);
+    let childrenArray = React.Children.toArray(props.children);
+    if(props.number > childrenArray.length){
+      return <p>There only exists {childrenArray.length} elements, not {props.number}</p>
+    }
+    let result = childrenArray.splice(0, props.number);
+    return (
+      <div id="component-container">
+        {result}
+      </div>
+    );
+}
+
 ReactDOM.render(
-  <FirstChildOnly>
-    <p>Hi there, Im the 1st element</p>
-    <span>Second element here</span>
-  </FirstChildOnly>
+  <Head number={5}>
+    <p>hey</p>
+    <p>ma</p>
+    <p>whats</p>
+    <p>up</p>
+    <p>you</p>
+    <p>good</p>
+  </Head>
   ,document.querySelector('#root'));
