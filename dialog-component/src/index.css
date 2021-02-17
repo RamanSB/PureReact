@@ -1,0 +1,21 @@
+#dialog-box {
+  width: 60%;
+  height: 40%;
+  background-color: white;
+  border: 1px solid grey;
+}
+
+#footer-container {
+  text-align: right;
+  height: 30px;
+  vertical-align: middle;
+}
+
+
+h4, p{
+  margin-left: 16px;
+}
+
+p {
+  font-size :14px;
+}
