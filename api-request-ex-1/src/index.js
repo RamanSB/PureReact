@@ -31,6 +31,9 @@ class Reddit extends React.Component {
   render(){
     console.log(`[render]`);
     const {posts} = this.state;
+    if(posts.length==0){
+      return <div>Loading...</div>;
+    }
     const {e} = this.state;
     console.log(`Error: ${e}`);
     console.log(`[render] state: ${JSON.stringify(this.state)}`);
@@ -51,4 +54,4 @@ class Reddit extends React.Component {
   }
 }
 
-ReactDOM.render(<Reddit subreddit="reactjsz"/>, document.querySelector('#root'));
+ReactDOM.render(<Reddit subreddit="reactjs"/>, document.querySelector('#root'));
