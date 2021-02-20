@@ -4,7 +4,8 @@ import axios from 'axios'
 
 class Reddit extends React.Component {
   state = {
-    posts: []
+    posts: [],
+    isLoading: false
   };
 
   constructor(props){
@@ -14,6 +15,7 @@ class Reddit extends React.Component {
 
   //This lifecycle method is a part of the mounting phase, componentDidMount runs after the constructor
   componentDidMount(){
+    this.setState({isLoading: true});
     console.log(`[componentDidMount]`)
     console.log(`[componentDidMount] props: ${JSON.stringify(this.props)}`);
     axios.get(`https://www.reddit.com/r/${this.props.subreddit}.json`)
@@ -25,14 +27,19 @@ class Reddit extends React.Component {
       .catch(e => {
         console.log(`[componentDidMount] Error occurred when making http GET request: ${JSON.stringify(e)}`);
         this.setState({e});
+      })
+      .finally(() => {
+        this.setState({
+          isLoading: false
+        })
       });
   }
 
   render(){
     console.log(`[render]`);
     const {posts} = this.state;
-    if(posts.length==0){
-      return <div>Loading...</div>;
+    if(this.state.isLoading){
+      return <div>Loading...</div>
     }
     const {e} = this.state;
     console.log(`Error: ${e}`);
