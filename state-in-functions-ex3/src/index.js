@@ -68,7 +68,7 @@ function SpeakerComponent({name}){
   return (
     <div id="attribute-container">
       <Decrementer state_updater={setVolumes} component_name={name}/>
-        <div>
+        <div style={{width:"96px", textAlign:"center"}}>
           <SoundValue value={volumes[name]}/>
           <SoundAttribute>{name}</SoundAttribute>
         </div>

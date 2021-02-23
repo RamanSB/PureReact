@@ -4,9 +4,11 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: 16px;
+  
 }
 
 button {
   height: 36px;
   width: 36px;
+  border: 2px dashed red;
 }
