@@ -2,20 +2,22 @@ import React from 'react';
 
 import './index.css';
 
-function TextInput(props){
+function TextInput({children, parentCallback}){
   const [text, setText] = React.useState('');
 
   const handleChange = (event) => {
+    parentCallback(event);
+    console.log(`[handleChange] ${event.target.name}`);
     setText(text => (
       event.target.value
-    ))
+    ));
   }
 
   return (
     <>
-      <label for="name-input">{props.children}</label>
+      <label>{children}</label>
       <input
-        id="name-input"
+        name={children.replace(/[\s|:]/g, "").toLowerCase()}
         type="text"
         value={text}
         onChange={handleChange}
