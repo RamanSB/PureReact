@@ -35,6 +35,8 @@ function Room(){
         <img id="light-bulb" src={imgSrcArray[lightLevel]}/>
         <br/>
         <button onClick={handleClick} style={{width:"168px", height: "48px", marginTop:"16px", border:"4px dotted black", borderRadius:"16px"}}>LightSwitch</button>
+        <br/>
+        <button onClick={()=>dispatch(-lightLevel)} style={{marginTop:"16px", borderRadius:"8px"}}>Off</button>
       </div>
     )
 }
