@@ -32,3 +32,11 @@
 .App-content {
   margin: 0 20px;
 }
+
+.App-nav-item button:hover {
+  color: #999;
+}
+
+.App-nav-item.selected {
+  border-bottom-color: #ffaa3f;
+}
