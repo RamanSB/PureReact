@@ -31,6 +31,17 @@ const App = () => {
     console.log(`[AddToCart] ${JSON.stringify(cart)}`);
   };
 
+  const removeItem = (item) => {
+    let index = cart.findIndex(i => i.id === item.id);
+    if(index >= 0){
+      setCart(cart => {
+        const copy = [...cart];
+        copy.splice(index, 1);
+        return copy;
+      });
+    }
+  }
+
 
 
   return (
@@ -40,14 +51,14 @@ const App = () => {
         onTabChange={setActiveTab}
       />
       <main className="App-content">
-        <Content onAddToCart={addToCart} tab={activeTab} cart={summarizeCart(cart)}/>
+        <Content onAddToCart={addToCart} tab={activeTab} cart={summarizeCart(cart)} onRemoveItem={removeItem}/>
       </main>
     </div>
   );
 };
 
 
-const Content = ({onAddToCart, tab, cart}) => {
+const Content = ({onAddToCart, tab, cart, onRemoveItem}) => {
   console.log(`Tab: ${JSON.stringify(tab)}`);
   switch(tab){
     default:
@@ -58,7 +69,12 @@ const Content = ({onAddToCart, tab, cart}) => {
           onAddToCart={onAddToCart}/>
       );
     case 'cart':
-      return <CartPage items={cart}/>;
+      return (
+        <CartPage
+          items={cart}
+          onAddOne={onAddToCart}
+          onRemoveOne={onRemoveItem}/>
+      );
   }
 };
 
