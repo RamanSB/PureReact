@@ -2,22 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 import './CartPage.css';
+import {calculateCartTotal} from './HelperFunctions.js';
 
 function CartPage({items, onAddOne, onRemoveOne}){
   console.log(`[CartPage] ${JSON.stringify(items)}`);
-
-  function calculateCartTotal(items, decimalPlace){
-    let total = 0;
-    for(let item of items){
-      console.log(`[CartPage] item: ${item.name} | qty: ${item.count} , price: ${item.price}`);
-      total += (item.price * item.count);
-    }
-    console.log(`[CartPage] total: £${total}`);
-    if(total !== 0){
-      total = Math.round(total * (10**decimalPlace))/100;
-    }
-    return total;
-  }
 
   function EmptyCartText(){
     return (
