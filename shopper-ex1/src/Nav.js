@@ -37,7 +37,7 @@ const Nav = ({activeTab, onTabChange}) => {
                   let amount = calculateCartTotal(cart, 2);
                   console.log(`[Nav] ${amount}`);
                 return (
-                  <span id="cart-summary-container"><FaShoppingCart/> {cartSize + " Item"+suffix} ${amount}</span>
+                  <button id="cart-summary-container" onClick={() => onTabChange("cart")}><span><FaShoppingCart/> {cartSize + " Item"+suffix} ${amount}</span></button>
                 );
               }
             }
