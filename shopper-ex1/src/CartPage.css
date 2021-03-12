@@ -33,3 +33,11 @@
   float: right;
   font-size: 24px;
 }
+
+.Cart-emptyText {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+  color: gray;
+}

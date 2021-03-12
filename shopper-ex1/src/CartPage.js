@@ -13,10 +13,19 @@ function CartPage({items, onAddOne, onRemoveOne}){
       total += (item.price * item.count);
     }
     console.log(`[CartPage] total: £${total}`);
-    if(total != 0){
+    if(total !== 0){
       total = Math.round(total * (10**decimalPlace))/100;
     }
     return total;
+  }
+
+  function EmptyCartText(){
+    return (
+      <div>
+        <span className="Cart-emptyText" style={{marginTop:"80px"}}>Your cart is empty.</span>
+        <span className="Cart-emptyText">Why not add some expensive products to it?</span>
+      </div>
+    );
   }
 
   let cartTotal = calculateCartTotal(items, 2);
@@ -42,10 +51,12 @@ function CartPage({items, onAddOne, onRemoveOne}){
           );
         })}
       </ul>
-      {cartTotal == 0 ? <></> : <span className="Cart-total">Total: ${cartTotal}</span>}
+      {cartTotal === 0 ? <EmptyCartText/> : <span className="Cart-total">Total: ${cartTotal}</span>}
     </>
   );
 }
+
+
 
 CartPage.propTypes = {
   items: PropTypes.array.isRequired,
