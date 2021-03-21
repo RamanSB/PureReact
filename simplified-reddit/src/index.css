@@ -1,0 +1,10 @@
+.post {
+  display: inline-flex;
+  width: 400px;
+  background-color: yellow;
+}
+
+.vote-icon {
+  width: 18px;
+  height: 18px;
+}
