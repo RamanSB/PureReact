@@ -1,10 +1,62 @@
 .post {
+  padding: 8px;
   display: inline-flex;
-  width: 400px;
-  background-color: yellow;
+  width: 480px;
+  background-color: white;
 }
 
 .vote-icon {
   width: 18px;
   height: 18px;
+  color: #DBDBDB;
+}
+
+.vote-image-container {
+  display: inline-flex;
+  height: min-content;
+  margin-right: 8px;
+}
+
+#post-image {
+  height: 48px;
+  margin: auto;
+  margin-left: 8px;
+}
+
+.voting-component {
+
+}
+
+#tile-post-time {
+  font-size: 12px;
+  color: #C2C2C2;
+  padding-top: 12px;
+  font-family: Arial;
+}
+
+#tile-title {
+  font-size: 16px;
+  font-family: Arial;
+  color: #DA4C38;
+}
+
+#tile-website {
+  margin-left: 8px;
+  font-size: 8px;
+  color: #DBDBDB;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.reddit-tile-container {
+  height: min-content;
+  padding: 4px;
+}
+
+.action-item-row {
+  margin-top: 4px;
+}
+
+span {
+  font-family: Arial;
 }
