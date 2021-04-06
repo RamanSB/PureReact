@@ -69,10 +69,23 @@ function RedditTile({props}){
 }
 
 function ItemActionRow({comments}){
-  console.log(`[ItemActionRow]`)
+  console.log(`[ItemActionRow] ${comments}`);
+  let commentResult;
+  switch(comments){
+    case 0:
+      commentResult = "comment"
+      break;
+    case 1:
+      commentResult = "1 comment"
+      break;
+    default:
+      commentResult = `${comments} comments`;
+      break;
+  }
+  console.log(`After switch`);
   return (
     <div className="action-item-row">
-      <span style={{color:"#DA4C38", fontWeight:"bold"}}>{comments} comments&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span style={{color:"#DA4C38", fontWeight:"bold"}}>{commentResult}&nbsp;&nbsp;&nbsp;&nbsp;</span>
       <span>share&nbsp;&nbsp;&nbsp;&nbsp;</span>
       <span>save&nbsp;&nbsp;&nbsp;&nbsp;</span>
       <span>hide&nbsp;&nbsp;&nbsp;&nbsp;</span>

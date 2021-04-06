@@ -13,8 +13,8 @@ let data = [
     source: "github.com",
     timestamp: "2021-04-06 02:02:02",
     username: "magenta_placenta",
-    comments: "0",
-    votes: 21,
+    comments: 0,
+    votes: 18,
     imgSrc: "logo192.png"
   },
   {
@@ -22,7 +22,7 @@ let data = [
     source: "goshakkk.name",
     timestamp: "2021-04-06 09:02:02",
     username: "goshakkk",
-    comments: "0",
+    comments: 0,
     votes: 7,
     imgSrc: "logo192.png"
   }
