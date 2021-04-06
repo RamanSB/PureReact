@@ -60,3 +60,7 @@
 span {
   font-family: Arial;
 }
+
+ul {
+  list-style-type: none;
+}

@@ -12,6 +12,18 @@ import './index.css';
 
 
 
+function App(){
+  let redditPosts = data.map((data, index) => {
+    return (
+      <li key={index}><Post props={data}/></li>
+    );
+  });
+
+  return (
+    <ul>{redditPosts}</ul>
+  );
+}
+
 function Post({props}){
   console.log(`[Post] ${JSON.stringify(props)}`);
   let {votes, imgSrc} = props;
@@ -23,6 +35,7 @@ function Post({props}){
       </div>
       <RedditTile props={props}/>
     </div>
+
   );
 }
 
@@ -31,7 +44,7 @@ function VotingComponent({votes}){
   return (
     <div className="voting-component">
       <FaArrowUp className="vote-icon"/>
-      <span style={{display:"block", paddingTop:"4px", paddingBottom:"4px", fontSize:"18px", color:"#BDBBBB", fontWeight:"bold"}}>{votes}</span>
+      <span style={{display:"block", paddingTop:"4px", paddingBottom:"4px", fontSize:"18px", color:"#BDBBBB", fontWeight:"bold", textAlign: "center"}}>{votes}</span>
       <FaArrowDown className="vote-icon"/>
     </div>
   );
@@ -70,4 +83,4 @@ function ItemActionRow({comments}){
 }
 
 
-ReactDOM.render(<Post props={data[0]}/>, document.querySelector('#root'));
+ReactDOM.render(<App/>, document.querySelector('#root'));
