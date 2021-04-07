@@ -7,13 +7,14 @@ import moment from 'moment';
 import './index.css';
 
 /*
-  state must include; number of comments and nu
+  state must include; number of comments and number of votes
 */
 
 
 
 function App(){
-  let redditPosts = data.map((data, index) => {
+
+  let redditPosts = data.sort((x, y) => y.votes - x.votes).map((data, index) => {
     return (
       <li key={index}><Post props={data}/></li>
     );
@@ -39,13 +40,16 @@ function Post({props}){
   );
 }
 
+
 function VotingComponent({votes}){
-  console.log(`[VotingComponent] ${votes}`);
+  console.log(`[VotingComponent]`);
+  let [voteCount, setVoteCount] = React.useState(votes);
+
   return (
     <div className="voting-component">
-      <FaArrowUp className="vote-icon"/>
-      <span style={{display:"block", paddingTop:"4px", paddingBottom:"4px", fontSize:"18px", color:"#BDBBBB", fontWeight:"bold", textAlign: "center"}}>{votes}</span>
-      <FaArrowDown className="vote-icon"/>
+      <FaArrowUp onClick={()=> {setVoteCount((prevState) => prevState+1);}} className="vote-icon"/>
+      <span style={{display:"block", paddingTop:"4px", paddingBottom:"4px", fontSize:"18px", color:"#BDBBBB", fontWeight:"bold", textAlign: "center"}}>{voteCount}</span>
+      <FaArrowDown onClick={()=>setVoteCount(--voteCount)} className="vote-icon"/>
     </div>
   );
 }

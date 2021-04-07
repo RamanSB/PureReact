@@ -14,8 +14,8 @@ let data = [
     timestamp: "2021-04-06 02:02:02",
     username: "magenta_placenta",
     comments: 0,
-    votes: 18,
-    imgSrc: "logo192.png"
+    votes: 145,
+    imgSrc: "man-in-field.png"
   },
   {
     title: "Redux vs MobX vs Flux vs... Do you even need that?",
@@ -24,7 +24,7 @@ let data = [
     username: "goshakkk",
     comments: 0,
     votes: 7,
-    imgSrc: "logo192.png"
+    imgSrc: "book.png"
   }
 ];
 
